@@ -1,0 +1,31 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="main" template="/views/templates/main.jsp">
+		<put-attribute name="titulo" value="Spring Forum"/>
+		<put-attribute name="cabecera" value="/views/templates/cabecera.jsp"/>
+		<put-attribute name="pie" value="/views/templates/pie.jsp"/>
+	</definition>
+	
+	<definition name="index" extends="main">
+		<put-attribute name="contenido" value="/views/index.jsp"/>
+	</definition>
+
+	<definition name="registro" extends="main">
+		<put-attribute name="contenido" value="/views/signup.jsp"/>
+		<put-attribute name="titulo" value="Bienvenido(a)!"/>
+	</definition>
+
+    <definition name="usuario/show" extends="main">
+    	<put-attribute name="contenido" value="/views/usuario/show.jsp"/>
+    	<put-attribute name="titulo" value="Detalle del Usuario"/>
+    </definition>
+    
+   <definition name="usuario/posts" template="/views/usuario/postsUsuario.jsp"/>
+    	
+    
+
+</tiles-definitions>

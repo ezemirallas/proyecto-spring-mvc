@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+
+<h:head>
+	<title>Lista de Nombres</title>
+	
+	<style>
+	
+		.campo{
+			background-color: #ccc;
+			color: white
+		}
+	</style>
+	
+	<script>
+	
+		function modificarValorCampo(){
+			var campo = document.getElementById('miForm:miCampo');
+			campo.value = "Valor Modificado";
+		}
+	</script>
+	
+</h:head>
+
+<h:body>
+	<h:form id="miForm">
+			Nombre: <h:inputText styleClass="campo"  
+						size="40" maxlength="50"
+						onchange="this.value = this.value.toUpperCase();"
+						onmouseover="this.style.backgroundColor = 'yellow';"
+						onmouseout="this.style.backgroundColor = '#ccc';"
+						style="border-color: blue; border-style: dotted"
+						id="miCampo" value="#{nombresBean.nombre}"
+			
+			binding="#{nombresBean.inputNombre}" />
+		<br />
+
+		<h:commandButton value="Agregar" binding="#{nombresBean.botonAgregar}"
+			action="#{nombresBean.agregar}" />
+		<br />
+		<ol>
+			<ui:repeat var="nombre" value="#{nombresBean.nombres}">
+				<li>#{nombre}</li>
+			</ui:repeat>
+		</ol>
+
+		<h:commandButton value="Ver Hola Demo"
+			action="hola?faces-redirect=true" />
+			
+			
+		<input type="button" value="Modificar campo" 
+			onclick="modificarValorCampo();"/>	
+			
+			
+		
+		
+		
+			
+
+	</h:form>
+
+</h:body>
+
+
+</html>

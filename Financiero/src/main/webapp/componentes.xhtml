@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+
+<h:head>
+
+
+</h:head>
+
+<h:body>
+
+	<h:form>
+	
+		<h:selectManyCheckbox id="asuntos"
+			value="#{nombresBean.asuntosInteres}"  >
+			<f:selectItem itemValue="1" itemLabel="Java"/>
+			<f:selectItem itemValue="2" itemLabel="NET"/>
+			<f:selectItem itemValue="3" itemLabel="Python"/>
+			<f:selectItem itemValue="4" itemLabel="Ruby"/>
+		</h:selectManyCheckbox>
+
+		<br/>
+
+		<h:selectBooleanCheckbox id="aceptar" value="#{nombres.acepto}">
+
+		</h:selectBooleanCheckbox>
+		<h:outputLabel value="Acepta los terminos y condiciones" for="aceptar"/>	
+		
+		<br />
+
+		<h:selectOneRadio id="sexo">
+			<f:selectItem itemValue="M" itemLabel="Masculino"></f:selectItem>
+			<f:selectItem itemValue="F" itemLabel="Femenino"></f:selectItem>
+		</h:selectOneRadio>
+
+		<br />
+
+
+		<h:selectManyListbox value="#{nombresBean.equiposFavoritos}"
+			id="equipos2">
+			<f:selectItem itemValue="La Palma" itemLabel="LA PALMA"></f:selectItem>
+			<f:selectItem itemValue="Ciclista" itemLabel="CLUB CICLISTA"></f:selectItem>
+			<f:selectItem itemValue="Yurimaguas" itemLabel="Sport Yuri"></f:selectItem>
+			<f:selectItem itemValue="AL" itemLabel="AL"></f:selectItem>
+			<f:selectItem itemValue="U" itemLabel="U"></f:selectItem>
+			<f:selectItem itemValue="SC" itemLabel="SC"></f:selectItem>
+		</h:selectManyListbox>
+
+		<br />
+
+		<h:selectOneListbox id="equipoFutbol2"
+			value="#{nombresBean.equipoFavorito}">
+			<f:selectItem itemValue="La Palma" itemLabel="LA PALMA"></f:selectItem>
+			<f:selectItem itemValue="Ciclista" itemLabel="CLUB CICLISTA"></f:selectItem>
+			<f:selectItem itemValue="Yurimaguas" itemLabel="Sport Yuri"></f:selectItem>
+		</h:selectOneListbox>
+
+
+		<br />
+
+		<h:selectManyMenu value="#{nombresBean.equiposFavoritos}" id="equipos">
+			<f:selectItem itemValue="La Palma" itemLabel="LA PALMA"></f:selectItem>
+			<f:selectItem itemValue="Ciclista" itemLabel="CLUB CICLISTA"></f:selectItem>
+			<f:selectItem itemValue="Yurimaguas" itemLabel="Sport Yuri"></f:selectItem>
+			<f:selectItem itemValue="AL" itemLabel="AL"></f:selectItem>
+			<f:selectItem itemValue="U" itemLabel="U"></f:selectItem>
+			<f:selectItem itemValue="SC" itemLabel="SC"></f:selectItem>
+		</h:selectManyMenu>
+
+		<br />
+
+		<h:outputLabel value="Equipo Futbol" for="equipoFutbol"></h:outputLabel>
+		<h:selectOneMenu id="equipoFutbol"
+			value="#{nombresBean.equipoFavorito}">
+			<f:selectItem itemValue="La Palma" itemLabel="LA PALMA"></f:selectItem>
+			<f:selectItem itemValue="Ciclista" itemLabel="CLUB CICLISTA"></f:selectItem>
+			<f:selectItem itemValue="Yurimaguas" itemLabel="Sport Yuri"></f:selectItem>
+		</h:selectOneMenu>
+
+
+
+		<h:graphicImage library="imagenes" name="java-hulk.jpg" width="200"
+			height="200"></h:graphicImage>
+		<br />
+
+
+		<h:outputLabel value="Nombre:" for="inputNombre" />
+		<h:inputText id="inputNombre" value="#{nombresBean.nombre}" />
+		<br />
+		<h:inputSecret value="#{loginBean.password}" />
+		<br />
+		<h:inputTextarea cols="40" rows="3"
+			value="#{nombresBean.recumenCurriculum}" />
+		<br />
+		<h:outputText value="Bienvenido" />
+		<br />
+		<h:outputText value="#{nombresBean.mensaje}" style="font-weight: bold" />
+		<br />
+		<h:outputFormat value="Hola {0} existen {1} alumnos">
+			<f:param value="#{nombresBean.nombre}" />
+			<f:param value="5" />
+		</h:outputFormat>
+	</h:form>
+
+</h:body>
+
+
+</html>
